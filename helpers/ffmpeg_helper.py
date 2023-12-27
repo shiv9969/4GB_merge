@@ -155,7 +155,7 @@ def MergeSubNew(filePath: str, subPath: str, user_id, file_list):
     muxcmd.append("copy")
     muxcmd.append("-c:s")
     muxcmd.append("srt")
-    muxcmd.append(f"./downloads/{str(user_id)}/[@Madflix_Bots]_softmuxed_video.mkv")
+    muxcmd.append(f"./downloads/{str(user_id)}/[@Sujan_BotZ]_softmuxed_video.mkv")
     LOGGER.info("Sub muxing")
     subprocess.call(muxcmd)
     return f"downloads/{str(user_id)}/[@Sujan_BotZ]_softmuxed_video.mkv"
