@@ -1,4 +1,4 @@
-from requests import get as rget
+from requests import rget
 from __init__ import LOGGER
 import os
 import subprocess
