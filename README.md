@@ -2,7 +2,7 @@
 <br>
 
 An Telegram Bot By [Sujan BotZ](https://t.me/Sujan_BotZ) To Merge multiple Videos in Telegram into single video. <br>
-Bugs should be reported at: [Telegram Group](https://t.me/Madflixbots_support)
+Bugs should be reported at: [Telegram](https://t.me/Sujan_BotZ)
 
 ```diff
 - TODO's:
