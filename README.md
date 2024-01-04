@@ -99,4 +99,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Credits
 
-- [Madflix Botz](https://github.com/SujanCh549)
+- [Sujan_BotZ](https://github.com/SujanCh549)
