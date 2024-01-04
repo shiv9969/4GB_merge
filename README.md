@@ -69,7 +69,7 @@ stats - (admin only) check bots stats
 
 ## Self Host
 ```sh
-$ git clone [[https://github.com/SujanCh549/VIDEO-MERGE-BOT](https://github.com/SujanCh549/VIDEO-MERGE-BOT)](https://github.com/SujanCh549/VIDEO-MERGE-BOT).git
+$ git clone https://github.com/SujanCh549/VIDEO-MERGE-BOT.git
 $ cd MERGE-BOT
 $ sudo apt-get install python3 python3-pip ffmpeg
 $ pip3 install -U pip
