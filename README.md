@@ -25,7 +25,7 @@ Bugs should be reported at: [Telegram](https://t.me/Sujan_BotZ)
 
 ```
 ## Deploy :
-<p><a href="https://heroku.com/deploy?template=https://github.com/jishusinha/Video-Merge-Bot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/SujanCh549/VIDEO-MERGE-BOT"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 ### OR
 Goto `settings > actions > secret > New Repository Secret` <br>
@@ -69,7 +69,7 @@ stats - (admin only) check bots stats
 
 ## Self Host
 ```sh
-$ git clone https://github.com/jishusinha/Video-Merge-Bot.git
+$ git clone [[https://github.com/SujanCh549/VIDEO-MERGE-BOT](https://github.com/SujanCh549/VIDEO-MERGE-BOT)](https://github.com/SujanCh549/VIDEO-MERGE-BOT).git
 $ cd MERGE-BOT
 $ sudo apt-get install python3 python3-pip ffmpeg
 $ pip3 install -U pip
@@ -81,7 +81,7 @@ $ bash start.sh
 ## License
 ```
 Merge Bot, Telegram Video Merge Bot
-Copyright (c) 2021  Jishu Sinha <https://github.com/jishusinha>
+Copyright (c) 2021  Sujan Ch <https://github.com/SujanCh549>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -99,4 +99,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Credits
 
-- [Madflix Botz](https://github.com/jishusinha)
+- [Madflix Botz](https://github.com/SujanCh549)
