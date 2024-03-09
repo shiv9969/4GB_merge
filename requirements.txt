@@ -5,7 +5,6 @@ Pillow
 psutil
 pymongo
 pyrogram
-pyrofork
 pyromod
 python-dotenv
 requests
