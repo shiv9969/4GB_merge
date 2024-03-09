@@ -4,7 +4,7 @@ hachoir
 Pillow
 psutil
 pymongo
-pyrogram==2.0.83
+pyrofork
 pyromod
 python-dotenv
 requests
