@@ -4,9 +4,10 @@ import shutil
 import os
 import time
 import ffmpeg
+from telegram import Message, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery
 from config import Config
-from pyrogram.types import Message
 from __init__ import LOGGER
 from helpers.utils import get_path_size
 
@@ -35,7 +36,7 @@ async def MergeVideo(input_file: str, user_id: int, message: Message, format_: s
         "copy",
         output_vid,
     ]
-    process = None
+    process = None     
     try:
         process = await asyncio.create_subprocess_exec(
             *file_generator_command,
@@ -48,7 +49,18 @@ async def MergeVideo(input_file: str, user_id: int, message: Message, format_: s
         )
         await asyncio.sleep(10)
         return None
-    await message.edit("Merging Video Now ...\n\nPlease Keep Patience ...")
+    await message.edit("Pʀᴏᴄᴇss Sᴛᴀʀᴛɪɴɢ ...")
+    await message.edit("Sᴛᴀʀᴛs ɪɴ 𝟻 Sᴇᴄᴏɴᴅs")
+    await asyncio.sleep(1)
+    await message.edit("Sᴛᴀʀᴛs ɪɴ 4 Sᴇᴄᴏɴᴅs")
+    await asyncio.sleep(1)
+    await message.edit("Sᴛᴀʀᴛs ɪɴ 3 Sᴇᴄᴏɴᴅs")
+    await asyncio.sleep(1)
+    await message.edit("Sᴛᴀʀᴛs ɪɴ 2 Sᴇᴄᴏɴᴅs")
+    await asyncio.sleep(1)
+    await message.edit("Sᴛᴀʀᴛs ɪɴ 1 Sᴇᴄᴏɴᴅs")
+    await asyncio.sleep(1)
+    await message.edit("Mᴇʀɢɪɴɢ Vɪᴅᴇᴏ Nᴏᴡ ...\n\nPʟᴇᴀsᴇ Kᴇᴇᴘ Pᴀᴛɪᴇɴᴄᴇ ...")
     stdout, stderr = await process.communicate()
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
@@ -58,7 +70,6 @@ async def MergeVideo(input_file: str, user_id: int, message: Message, format_: s
         return output_vid
     else:
         return None
-
 
 async def MergeSub(filePath: str, subPath: str, user_id):
     """
@@ -187,7 +198,7 @@ def MergeAudio(videoPath: str, files_list: list, user_id):
         muxcmd.append("-map")
         muxcmd.append(f"{j}:a")
         muxcmd.append(f"-metadata:s:a:{audioTracks}")
-        muxcmd.append(f"title=Track {audioTracks+1} - tg@Sujan_BotZ")
+        muxcmd.append(f"title=Track {audioTracks+1} - tg@𝙽𝚘𝚛𝚍𝙱𝚘𝚝𝚣")
         audioTracks += 1
     muxcmd.append(f"-disposition:s:a:{fAudio}")
     muxcmd.append("default")
