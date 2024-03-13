@@ -3,12 +3,16 @@ from pyrogram import filters, Client as mergeApp
 from pyrogram.types import Message, InlineKeyboardMarkup
 from helpers.msg_utils import MakeButtons
 from helpers.utils import UserSettings
-
+from helpers.forcesub import ForceSub
 
 @mergeApp.on_message(filters.command(["settings"]))
 async def f1(c: mergeApp, m: Message):
+    
+    Fsub = await ForceSub(c, m)
+    if Fsub == 400:
+        return
     # setUserMergeMode(uid=m.from_user.id,mode=1)
-    replay = await m.reply(text="Please wait", quote=True)
+    replay = await m.reply(text="Pʟᴇᴀsᴇ ᴡᴀɪᴛ", quote=True)
     usettings = UserSettings(m.from_user.id, m.from_user.first_name)
     await userSettings(
         replay, m.from_user.id, m.from_user.first_name, m.from_user.last_name, usettings
@@ -44,10 +48,10 @@ async def userSettings(
 <b><u>Merge Bot settings for <a href='tg://user?id={uid}'>{fname} {lname}</a></u></b>
     ┃
     ┣**👦 ID: <u>{usettings.user_id}</u>**
-    ┣**{'🚫' if usettings.banned else '🫡'} Ban Status: <u>{usettings.banned}</u>**
-    ┣**{'⚡' if usettings.allowed else '❗'} Allowed: <u>{usettings.allowed}</u>**
-    ┣**{'✅' if usettings.edit_metadata else '❌'} Edit Metadata: <u>{usettings.edit_metadata}</u>**
-    ┗**Ⓜ️ Merge mode: <u>{userMergeModeStr}</u>**
+    ┣**{'🚫' if usettings.banned else '🫡'} Bᴀɴ sᴛᴀᴛᴜs: <u>{usettings.banned}</u>**
+    ┣**{'⚡' if usettings.allowed else '❗'} Aʟʟᴏᴡᴇᴅ: <u>{usettings.allowed}</u>**
+    ┣**{'✅' if usettings.edit_metadata else '❌'} Eᴅɪᴛ ᴍᴇᴛᴀᴅᴀᴛᴀ: <u>{usettings.edit_metadata}</u>**
+    ┗**Ⓜ️ Mᴇʀɢᴇ Mᴏᴅᴇ: <u>{userMergeModeStr}</u>**
 """
         markup = b.makebuttons(
             [
