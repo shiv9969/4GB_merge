@@ -1,9 +1,8 @@
-# MERGE-BOT
-### PR's Welcomed
+# VIDEO-MERGE-BOT
 <br>
 
-
-
+An Telegram Bot By [Sujan BotZ](https://t.me/Sujan_BotZ) To Merge multiple Videos in Telegram into single video. <br>
+Bugs should be reported at: [Telegram](https://t.me/Sujan_BotZ)
 
 ```diff
 - TODO's:
@@ -25,11 +24,8 @@
 + Log Channel to store all merged videos
 
 ```
-## Deploy Tutorial : 
-[![Watch the video](https://img.youtube.com/vi/H-xVk_4zccs/hqdefault.jpg)](https://youtu.be/H-xVk_4zccs)
-
-## Deploy(at your own risk) :
-<p><a href="https://heroku.com/deploy?template=https://github.com/BLVCK-ANGEL/Merge-Bot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+## Deploy :
+<p><a href="https://heroku.com/deploy?template=https://github.com/SujanCh549/VIDEO-MERGE-BOT"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 ### OR
 Goto `settings > actions > secret > New Repository Secret` <br>
@@ -41,9 +37,6 @@ Goto `Actions > Manual Deploy To Heroku > Run Workflow`
 
 ### OR
 Coming soon
-## Tutorial to get MongoDB URI:
-[![Watch the video](https://img.youtube.com/vi/OfQ7xxMylV4/hqdefault.jpg)](https://youtu.be/OfQ7xxMylV4)
-
 
 ## Config File Variables :
 1. `TELEGRAM_API` : User Account Telegram API_ID, get it from my.telegram.org
@@ -76,7 +69,7 @@ stats - (admin only) check bots stats
 
 ## Self Host
 ```sh
-$ git clone https://github.com/BLVCK-ANGEL/Merge-Bot.git
+$ git clone https://github.com/SujanCh549/VIDEO-MERGE-BOT.git
 $ cd MERGE-BOT
 $ sudo apt-get install python3 python3-pip ffmpeg
 $ pip3 install -U pip
@@ -88,7 +81,7 @@ $ bash start.sh
 ## License
 ```
 Merge Bot, Telegram Video Merge Bot
-Copyright (c) 2021  Blvck Angel <https://github.com/BLVCK-ANGEL>
+Copyright (c) 2021  Sujan Ch <https://github.com/SujanCh549>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -106,7 +99,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 ## Credits
 
-- [Me](https://github.com/yashoswalyo) for [Nothing](https://github.com/yashoswalyo/MERGE-BOT) 😬
-- [Dan](https://github.com/delivrance) for [Pyrogram](https://github.com/pyrogram/pyrogram) ❤️
-- [Abir Hasan](https://github.com/AbirHasan2005) for his wonderful [code](https://github.com/AbirHasan2005/VideoMerge-Bot) ❤️
-- [Jigarvarma2005](https://github.com/Jigarvarma2005) and [SpechIDE](https://t.me/spechide) for helping me to fix bugs 🤓
+- [Sujan_BotZ](https://github.com/SujanCh549)
