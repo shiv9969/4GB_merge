@@ -171,7 +171,7 @@ async def start_handler(c: Client, m: Message):
         text=f"Hɪ **⚡ I Aᴍ A Fɪʟᴇ/Vɪᴅᴇᴏ Mᴇʀɢᴇ Bᴏᴛ\n\n😎 I Cᴀɴ Mᴇʀɢᴇ Tᴇʟᴇɢʀᴀᴍ Fɪʟᴇs!, Aɴᴅ Uᴘʟᴏᴀᴅ Iᴛ Tᴏ Tᴇʟᴇɢʀᴀᴍ.\n\n/help Fᴏʀ Hᴏᴡ Tᴏ Uꜱᴇ\n\n**Oᴡɴᴇʀ: 🈲 @{Config.OWNER_USERNAME}**",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Cʟᴏsᴇ 🔐", callback_data="close")]]
+            [[InlineKeyboardButton("Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ 📢", url="https://t.me/Sujan_BotZ")]]
         ),
     )
 
