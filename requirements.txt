@@ -12,6 +12,6 @@ pymongo
 Pyrogram
 pyromod
 python-dotenv
-requests
+requests==2.26.0
 TgCrypto
 python-telegram-bot
