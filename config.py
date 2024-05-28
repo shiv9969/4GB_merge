@@ -12,7 +12,7 @@ class Config(object):
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Shivji:BoBfiles@cluster0.t1mka5v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     LOGCHANNEL = os.environ.get("LOG_CHANNEL", "-1002218617951")  # Add channel id as -100 + Actual ID
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID","17YGmtIESI3_cXExJ1ec9FlzPHvKP-8A4")
-    USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING", "BQFrxRkACPNXDR3pG4KvlHVjtKlFNUz42M-eXH7Mo9RuN2fT4NHKZxwvCSbcBNHFreKnfPwqNl0DApR3QwqviHTt0gcHrV1NX_zaDdzdxN_H4_OebZgGFYwkPsWQhrVAja8HIMQvyqj7SDegdWD0AicnIhHknfvFpru9qMyE5uMqq6IO76VTz46TV3tU24F5RN0_USYA1e2nnqcsZPtWM-fAUnraXg-7FUbJ1Vj4mafM-oo7T-uSW3lZ2byMdAqsQLsbq2ubeopPTkN6ciIYJV7zBrEJTGcLZifZsJaK8mplWr0p3K6uS1Jcbxzk6m7vh2R06imwTEC42LmHb71Wltw5hYxLCwAAAABUBOZoAA")
+    USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING")
     IS_PREMIUM = True
     MODES = ["video-video", "video-audio", "video-subtitle","extract-streams"]
     UPSTREAM_REPO = "https://github.com/SujanCh549/4Gb-VIDEO-MERGE-BOT"
