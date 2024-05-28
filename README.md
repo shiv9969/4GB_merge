@@ -1,8 +1,8 @@
 # VIDEO-MERGE-BOT
 <br>
 
-An Telegram Bot By [Sujan BotZ](https://t.me/Sujan_BotZ) To Merge multiple Videos in Telegram into single video. <br>
-Bugs should be reported at: [Telegram](https://t.me/Sujan_BotZ)
+An Telegram Bot By [bob_files](https://t.me/bob_files1) To Merge multiple Videos in Telegram into single video. <br>
+Bugs should be reported at: [Telegram](https://t.me/bob_files1)
 
 ```diff
 - TODO's:
