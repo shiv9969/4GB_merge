@@ -15,7 +15,7 @@ class Config(object):
     USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING")
     IS_PREMIUM = True
     MODES = ["video-video", "video-audio", "video-subtitle","extract-streams"]
-    UPSTREAM_REPO = "https://github.com/SujanCh549/4Gb-VIDEO-MERGE-BOT"
+    UPSTREAM_REPO = "https://github.com/shiv9969/4GB_merge"
     UPSTREAM_BRANCH = "master"
 
     START_TEXT = """
