@@ -7,7 +7,7 @@ class Config(object):
     OWNER = os.environ.get("OWNER", "1525203313")
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "t.me/assaulter_shiv")
     SESSION_NAME = os.environ.get("SESSION_NAME", "Merge-Bot")
-    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "t.me/bob_files1")
+    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "bob_files1")
     PASSWORD = os.environ.get("PASSWORD")
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Shivji:BoBfiles@cluster0.t1mka5v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     LOGCHANNEL = os.environ.get("LOG_CHANNEL", "-1002218617951")  # Add channel id as -100 + Actual ID
