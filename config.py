@@ -9,9 +9,9 @@ class Config(object):
     SESSION_NAME = os.environ.get("SESSION_NAME", "Merge-Bot")
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "bob_files1")
     PASSWORD = os.environ.get("PASSWORD")
-    DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Shivji:BoBfiles@cluster0.t1mka5v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Shivji:BoBfiles@cluster0.t1mka5v.mongodb.net/?retryWrites=true&w=majority")
     LOGCHANNEL = os.environ.get("LOG_CHANNEL", "-1002218617951")  # Add channel id as -100 + Actual ID
-    GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID","17YGmtIESI3_cXExJ1ec9FlzPHvKP-8A4")
+    GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID")
     USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING")
     IS_PREMIUM = True
     MODES = ["video-video", "video-audio", "video-subtitle","extract-streams"]
