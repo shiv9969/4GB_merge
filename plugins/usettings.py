@@ -59,7 +59,7 @@ async def userSettings(
                 userMergeModeStr,
                 "Edit Metadata",
                 editMetadataStr,
-                "open",
+                "close",
             ],
             [
                 "tryotherbutton",
