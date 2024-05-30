@@ -10,7 +10,7 @@ class Config(object):
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "BoB_Files1")
     PASSWORD = os.environ.get("PASSWORD")
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Shivji:BoBfiles@cluster0.t1mka5v.mongodb.net/?retryWrites=true&w=majority")
-    LOGCHANNEL = os.environ.get("LOG_CHANNEL", "-1002101175853")  # Add channel id as -100 + Actual ID
+    LOGCHANNEL = os.environ.get("LOG_CHANNEL", "-1001946386363")  # Add channel id as -100 + Actual ID
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID")
     USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING")
     IS_PREMIUM = True
