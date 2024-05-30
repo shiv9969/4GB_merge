@@ -59,12 +59,12 @@ class UserSettings(object):
         self.user_id: int = uid
         self.name: str = name
         self.merge_mode: int = 1
-        self.edit_metadata: bool = False
+        self.edit_metadata: bool = True
         self.allowed: bool = False
         self.thumbnail = None
         self.banned:bool = False
         self.get()
-        # def __init__(self,uid:int,name:str,merge_mode:int=1,edit_metadata=False) -> None:
+        # def __init__(self,uid:int,name:str,merge_mode:int=1,edit_metadata=True) -> None:
 
     def get(self):
         try:
