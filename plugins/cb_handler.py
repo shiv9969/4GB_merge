@@ -76,7 +76,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             return
         UPLOAD_TO_DRIVE.update({f"{cb.from_user.id}": True})
         await cb.message.edit(
-            text="Oᴋᴀʏ I'ʟʟ Uᴘʟᴏᴀᴅ Tᴏ Dʀɪᴠᴇ\nDᴏ Yᴏᴜ Wᴀɴᴛ Tᴏ Rᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ Fɪʟᴇ Nᴀᴍᴇ Is **[@Sujan_BotZ]_merged.mkv**",
+            text="Oᴋᴀʏ I'ʟʟ Uᴘʟᴏᴀᴅ Tᴏ Dʀɪᴠᴇ\nDᴏ Yᴏᴜ Wᴀɴᴛ Tᴏ Rᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ Fɪʟᴇ Nᴀᴍᴇ Is **[@BoB_Files1]_merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -131,7 +131,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
                 return
             await cb.message.edit(
             text=f"Hɪ **⚡ I Aᴍ A Fɪʟᴇ/Vɪᴅᴇᴏ Mᴇʀɢᴇ Bᴏᴛ\n\n😎 I Cᴀɴ Mᴇʀɢᴇ Tᴇʟᴇɢʀᴀᴍ Fɪʟᴇs!, Aɴᴅ Uᴘʟᴏᴀᴅ Iᴛ Tᴏ Tᴇʟᴇɢʀᴀᴍ.\n\n/help Fᴏʀ Hᴏᴡ Tᴏ Uꜱᴇ\n\n**Oᴡɴᴇʀ: 🈲 @{Config.OWNER_USERNAME}**",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Uᴘᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ 📢", url="https://t.me/Sujan_BotZ")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Uᴘᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ 📢", url="https://t.me/BoB_Files1")]]),
             disable_web_page_preview=True
         )
             
@@ -156,7 +156,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     elif cb.data == "document":
         UPLOAD_AS_DOC.update({f"{cb.from_user.id}": True})
         await cb.message.edit(
-            text="Dᴏ Yᴏᴜ Wᴀɴᴛ Tᴏ Rᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ Fɪʟᴇ Nᴀᴍᴇ Is **[@Sujan_BotZ]_merged.mkv**",
+            text="Dᴏ Yᴏᴜ Wᴀɴᴛ Tᴏ Rᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ Fɪʟᴇ Nᴀᴍᴇ Is **[@BoB_Files1]_merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -172,7 +172,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
     elif cb.data == "video":
         UPLOAD_AS_DOC.update({f"{cb.from_user.id}": False})
         await cb.message.edit(
-            text="Dᴏ Yᴏᴜ Wᴀɴᴛ Tᴏ Rᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ Fɪʟᴇ Nᴀᴍᴇ Is **[@Sujan_BotZ]_merged.mkv**",
+            text="Dᴏ Yᴏᴜ Wᴀɴᴛ Tᴏ Rᴇɴᴀᴍᴇ? Dᴇғᴀᴜʟᴛ Fɪʟᴇ Nᴀᴍᴇ Is **[@BoB_Files1]_merged.mkv**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -202,7 +202,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
         user = UserSettings(cb.from_user.id, cb.from_user.first_name)
         if "YES" in cb.data:
             await cb.message.edit(
-                "Cᴜʀʀᴇɴᴛ Fɪʟᴇɴᴀᴍᴇ: **[@Sujan_BotZ]_merged.mkv**\n\nSᴇɴᴅ Mᴇ Nᴇᴡ ғɪʟᴇ Nᴀᴍᴇ Wɪᴛʜᴏᴜᴛ Exᴛᴇɴsɪᴏɴ: Yᴏᴜ Hᴀᴠᴇ 60 Sᴇᴄᴏɴᴅ"
+                "Cᴜʀʀᴇɴᴛ Fɪʟᴇɴᴀᴍᴇ: **[@BoB_Files1]_merged.mkv**\n\nSᴇɴᴅ Mᴇ Nᴇᴡ ғɪʟᴇ Nᴀᴍᴇ Wɪᴛʜᴏᴜᴛ Exᴛᴇɴsɪᴏɴ: Yᴏᴜ Hᴀᴠᴇ 60 Sᴇᴄᴏɴᴅ"
             )
             res: Message = await c.listen(chat_id=cb.message.chat.id, filters=filters.text, listener_type=ListenerTypes.MESSAGE, timeout=120, user_id=cb.from_user.id)
             if res.text:
@@ -218,7 +218,7 @@ async def callback_handler(c: Client, cb: CallbackQuery):
             return
         if "NO" in cb.data:
             new_file_name = (
-                f"downloads/{str(cb.from_user.id)}/[@Sujan_BotZ]_merged.mkv"
+                f"downloads/{str(cb.from_user.id)}/[@BoB_Files1]_merged.mkv"
             )
             if user.merge_mode == 1:
                 await mergeNow(c, cb, new_file_name)
