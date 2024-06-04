@@ -97,24 +97,7 @@ async def loginHandler(c: Client, m: Message):
         await m.reply_text(text=f"**Dont Spam**\n  ⚡ You can use me!!", quote=True)
     else:
         try:
-            passwd = m.text.split(" ", 1)[1]
-        except:
-            await m.reply_text("**Command:**\n  `/login <password>`\n\n**Usage:**\n  `Shiv`: Get the password from owner",quote=True,parse_mode=enums.parse_mode.ParseMode.MARKDOWN)
-        passwd = passwd.strip()
-        if passwd == Config.PASSWORD:
-            user.allowed = True
-            await m.reply_text(
-                text=f"**Login passed ✅,**\n  ⚡ Now you can use me!!", quote=True
-            )
-        else:
-            await m.reply_text(
-                text=f"**Login failed ❌,**\n  🛡️ Unfortunately you can't use me\n\nContact: 🈲 @{Config.OWNER_USERNAME}",
-                quote=True,
-            )
-    user.set()
-    del user
-    return
-
+            
 
 @mergeApp.on_message(filters.command(["stats"]) & filters.private)
 async def stats_handler(c: Client, m: Message):
