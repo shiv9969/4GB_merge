@@ -727,31 +727,6 @@ async def makeButtons(bot: Client, m: Message, db: dict):
     markup.append([InlineKeyboardButton("💥 Clear Files", callback_data="cancel")])
     return markup
 
-
-LOGCHANNEL = Config.LOGCHANNEL
-try:
-    if Config.USER_SESSION_STRING is None:
-        raise KeyError
-    LOGGER.info("Starting USER Session")
-    userBot = Client(
-        name="merge-bot-user",
-        session_string=Config.USER_SESSION_STRING,
-        no_updates=True,
-    )
-
-except KeyError:
-    userBot = None
-    LOGGER.warning("No User Session, Default Bot session will be used")
-
-
-if __name__ == "__main__":             
-                )
-
-    markup.append([InlineKeyboardButton("🗂 Mᴇʀɢᴇ Nᴏᴡ", callback_data="merge")])
-    markup.append([InlineKeyboardButton("🚫 Cʟᴇᴀʀ Fɪʟᴇs", callback_data="cancel")])
-    return markup
-
-
 LOGCHANNEL = Config.LOGCHANNEL
 try:
     if Config.USER_SESSION_STRING is None:
