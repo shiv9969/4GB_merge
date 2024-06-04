@@ -744,8 +744,7 @@ except KeyError:
     LOGGER.warning("No User Session, Default Bot session will be used")
 
 
-if __name__ == "__main__":
-                    ]
+if __name__ == "__main__":             
                 )
 
     markup.append([InlineKeyboardButton("🗂 Mᴇʀɢᴇ Nᴏᴡ", callback_data="merge")])
