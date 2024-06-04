@@ -89,15 +89,32 @@ async def sendLogFile(c: Client, m: Message):
 async def loginHandler(c: Client, m: Message):
     user = UserSettings(m.from_user.id, m.from_user.first_name)
     if user.banned:
-        await m.reply_text(text=f"**Banned User Detected!**\n  🛡️ Unfortunately you can't use me\n\nContact: 🈲 @{Config.OWNER_USERNAME}", quote=True)
+        await m.reply_text(text=f"**Banned User Detected!**\n  ðŸ›¡ï¸ Unfortunately you can't use me\n\nContact: ðŸˆ² @{Config.OWNER_USERNAME}", quote=True)
         return
     if user.user_id == int(Config.OWNER):
         user.allowed = True
     if user.allowed:
-        await m.reply_text(text=f"**Dont Spam**\n  ⚡ You can use me!!", quote=True)
+        await m.reply_text(text=f"**Dont Spam**\n  âš¡ You can use me!!", quote=True)
     else:
         try:
-            
+            passwd = m.text.split(" ", 1)[1]
+        except:
+            await m.reply_text("**Command:**\n  `/login <password>`\n\n**Usage:**\n  `Shiv`: Get the password from owner",quote=True,parse_mode=enums.parse_mode.ParseMode.MARKDOWN)
+        passwd = passwd.strip()
+        if passwd == Config.PASSWORD:
+            user.allowed = True
+            await m.reply_text(
+                text=f"**Login passed âœ…,**\n  âš¡ Now you can use me!!", quote=True
+            )
+        else:
+            await m.reply_text(
+                text=f"**Login failed âŒ,**\n  ðŸ›¡ï¸ Unfortunately you can't use me\n\nContact: ðŸˆ² @{Config.OWNER_USERNAME}",
+                quote=True,
+            )
+    user.set()
+    del user
+    return
+
 
 @mergeApp.on_message(filters.command(["stats"]) & filters.private)
 async def stats_handler(c: Client, m: Message):
@@ -112,17 +129,17 @@ async def stats_handler(c: Client, m: Message):
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
     stats = (
-        f"<b>╭「 💠 BOT STATISTICS 」</b>\n"
-        f"<b>│</b>\n"
-        f"<b>├⏳ Bot Uptime : {currentTime}</b>\n"
-        f"<b>├💾 Total Disk Space : {total}</b>\n"
-        f"<b>├📀 Total Used Space : {used}</b>\n"
-        f"<b>├💿 Total Free Space : {free}</b>\n"
-        f"<b>├🔺 Total Upload : {sent}</b>\n"
-        f"<b>├🔻 Total Download : {recv}</b>\n"
-        f"<b>├🖥 CPU : {cpuUsage}%</b>\n"
-        f"<b>├⚙️ RAM : {memory}%</b>\n"
-        f"<b>╰💿 DISK : {disk}%</b>"
+        f"<b>â•­ã€Œ ðŸ’  BOT STATISTICS ã€</b>\n"
+        f"<b>â”‚</b>\n"
+        f"<b>â”œâ³ Bot Uptime : {currentTime}</b>\n"
+        f"<b>â”œðŸ’¾ Total Disk Space : {total}</b>\n"
+        f"<b>â”œðŸ“€ Total Used Space : {used}</b>\n"
+        f"<b>â”œðŸ’¿ Total Free Space : {free}</b>\n"
+        f"<b>â”œðŸ”º Total Upload : {sent}</b>\n"
+        f"<b>â”œðŸ”» Total Download : {recv}</b>\n"
+        f"<b>â”œðŸ–¥ CPU : {cpuUsage}%</b>\n"
+        f"<b>â”œâš™ï¸ RAM : {memory}%</b>\n"
+        f"<b>â•°ðŸ’¿ DISK : {disk}%</b>"
     )
     await m.reply_text(text=stats, quote=True)
 
@@ -168,7 +185,7 @@ async def broadcast_handler(c: Client, m: Message):
         await asyncio.sleep(3)
     await status.edit_text(
         text=BROADCAST_MSG.format(len, success)
-        + f"**Failed: {str(len-success)}**\n\n__🤓 Broadcast completed sucessfully__",
+        + f"**Failed: {str(len-success)}**\n\n__ðŸ¤“ Broadcast completed sucessfully__",
     )
 
 
@@ -179,7 +196,7 @@ async def start_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Hi **{m.from_user.first_name}**\n\n ðŸ›¡ï¸ Unfortunately you can't use me\n\n**Contact: ðŸˆ² @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
@@ -187,7 +204,7 @@ async def start_handler(c: Client, m: Message):
         user.allowed = True
         user.set()
     res = await m.reply_text(
-        text=f"Hi **{m.from_user.first_name}**\n\n ⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**Owner: 🈲 @{Config.OWNER_USERNAME}** ",
+        text=f"Hi **{m.from_user.first_name}**\n\n âš¡ I am a file/video merger bot\n\nðŸ˜Ž I can merge Telegram files!, And upload it to telegram\n\n**Owner: ðŸˆ² @{Config.OWNER_USERNAME}** ",
         quote=True,
     )
     del user
@@ -202,7 +219,7 @@ async def files_handler(c: Client, m: Message):
     if user_id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Hi **{m.from_user.first_name}**\n\n ðŸ›¡ï¸ Unfortunately you can't use me\n\n**Contact: ðŸˆ² @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
@@ -219,12 +236,12 @@ async def files_handler(c: Client, m: Message):
     currentFileNameExt = media.file_name.rsplit(sep=".")[-1].lower()
     if currentFileNameExt in "conf":
         await m.reply_text(
-            text="**💾 Config file found, Do you want to save it?**",
+            text="**ðŸ’¾ Config file found, Do you want to save it?**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("✅ Yes", callback_data=f"rclone_save"),
-                        InlineKeyboardButton("❌ No", callback_data="rclone_discard"),
+                        InlineKeyboardButton("âœ… Yes", callback_data=f"rclone_save"),
+                        InlineKeyboardButton("âŒ No", callback_data="rclone_discard"),
                     ]
                 ]
             ),
@@ -382,7 +399,7 @@ async def photo_handler(c: Client, m: Message):
     # if m.from_user.id != int(Config.OWNER):
     if not user.allowed:
         res = await m.reply_text(
-            text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+            text=f"Hi **{m.from_user.first_name}**\n\n ðŸ›¡ï¸ Unfortunately you can't use me\n\n**Contact: ðŸˆ² @{Config.OWNER_USERNAME}** ",
             quote=True,
         )
         del user
@@ -394,7 +411,7 @@ async def photo_handler(c: Client, m: Message):
     # await database.saveThumb(m.from_user.id, thumbnail)
     LOCATION = f"downloads/{m.from_user.id}_thumb.jpg"
     await c.download_media(message=m, file_name=LOCATION)
-    await msg.edit_text(text="✅ Custom Thumbnail Saved!")
+    await msg.edit_text(text="âœ… Custom Thumbnail Saved!")
     del user
 
 
@@ -444,7 +461,7 @@ async def help_msg(c: Client, m: Message):
 5) Select rename if you want to give custom file name else press default**""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Close 🔐", callback_data="close")]]
+            [[InlineKeyboardButton("Close ðŸ”", callback_data="close")]]
         ),
     )
 
@@ -453,34 +470,34 @@ async def help_msg(c: Client, m: Message):
 async def about_handler(c: Client, m: Message):
     await m.reply_text(
         text="""
-**ᴡʜᴀᴛ's ɴᴇᴡ:**
-👨‍💻 ʙᴀɴ/ᴜɴʙᴀɴ ᴜsᴇʀs
-👨‍💻 ᴇxᴛʀᴀᴄᴛ ᴀʟʟ ᴀᴜᴅɪᴏs ᴀɴᴅ sᴜʙᴛɪᴛʟᴇs ғʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ
-👨‍💻 ᴍᴇʀɢᴇ ᴠɪᴅᴇᴏ + ᴀᴜᴅɪᴏ 
-👨‍💻 ᴍᴇʀɢᴇ ᴠɪᴅᴇᴏ + sᴜʙᴛɪᴛʟᴇs
-👨‍💻 ᴜᴘʟᴏᴀᴅ ᴛᴏ ᴅʀɪᴠᴇ ᴜsɪɴɢ ʏᴏᴜʀ ᴏᴡɴ ʀᴄʟᴏɴᴇ ᴄᴏɴғɪɢ
-👨‍💻 ᴍᴇʀɢᴇᴅ ᴠɪᴅᴇᴏ ᴘʀᴇsᴇʀᴠᴇs ᴀʟʟ sᴛʀᴇᴀᴍs ᴏғ ᴛʜᴇ ғɪʀsᴛ ᴠɪᴅᴇᴏ ʏᴏᴜ sᴇɴᴅ (ɪ.ᴇ ᴀʟʟ ᴀᴜᴅɪᴏᴛʀᴀᴄᴋs/sᴜʙᴛɪᴛʟᴇs)
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-**ғᴇᴀᴛᴜʀᴇs**
-🔰 ᴍᴇʀɢᴇ ᴜᴘᴛᴏ 𝟷𝟶 ᴠɪᴅᴇᴏ ɪɴ ᴏɴᴇ 
-🔰 ᴜᴘʟᴏᴀᴅ ᴀs ᴅᴏᴄᴜᴍᴇɴᴛs/ᴠɪᴅᴇᴏ
-🔰 ᴄᴜsᴛᴏᴍs ᴛʜᴜᴍʙɴᴀɪʟ sᴜᴘᴘᴏʀᴛ
-🔰 ᴜsᴇʀs ᴄᴀɴ ʟᴏɢɪɴ ᴛᴏ ʙᴏᴛ ᴜsɪɴɢ ᴘᴀssᴡᴏʀᴅ
-🔰 ᴏᴡɴᴇʀ ᴄᴀɴ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀs
+**á´¡Êœá´€á´›'s É´á´‡á´¡:**
+ðŸ‘¨â€ðŸ’» Ê™á´€É´/á´œÉ´Ê™á´€É´ á´œsá´‡Ê€s
+ðŸ‘¨â€ðŸ’» á´‡xá´›Ê€á´€á´„á´› á´€ÊŸÊŸ á´€á´œá´…Éªá´s á´€É´á´… sá´œÊ™á´›Éªá´›ÊŸá´‡s Ò“Ê€á´á´ á´›á´‡ÊŸá´‡É¢Ê€á´€á´ á´á´‡á´…Éªá´€
+ðŸ‘¨â€ðŸ’» á´á´‡Ê€É¢á´‡ á´ Éªá´…á´‡á´ + á´€á´œá´…Éªá´ 
+ðŸ‘¨â€ðŸ’» á´á´‡Ê€É¢á´‡ á´ Éªá´…á´‡á´ + sá´œÊ™á´›Éªá´›ÊŸá´‡s
+ðŸ‘¨â€ðŸ’» á´œá´˜ÊŸá´á´€á´… á´›á´ á´…Ê€Éªá´ á´‡ á´œsÉªÉ´É¢ Êá´á´œÊ€ á´á´¡É´ Ê€á´„ÊŸá´É´á´‡ á´„á´É´Ò“ÉªÉ¢
+ðŸ‘¨â€ðŸ’» á´á´‡Ê€É¢á´‡á´… á´ Éªá´…á´‡á´ á´˜Ê€á´‡sá´‡Ê€á´ á´‡s á´€ÊŸÊŸ sá´›Ê€á´‡á´€á´s á´Ò“ á´›Êœá´‡ Ò“ÉªÊ€sá´› á´ Éªá´…á´‡á´ Êá´á´œ sá´‡É´á´… (Éª.á´‡ á´€ÊŸÊŸ á´€á´œá´…Éªá´á´›Ê€á´€á´„á´‹s/sá´œÊ™á´›Éªá´›ÊŸá´‡s)
+âž–âž–âž–âž–âž–âž–âž–âž–âž–âž–âž–âž–âž–
+**Ò“á´‡á´€á´›á´œÊ€á´‡s**
+ðŸ”° á´á´‡Ê€É¢á´‡ á´œá´˜á´›á´ ðŸ·ðŸ¶ á´ Éªá´…á´‡á´ ÉªÉ´ á´É´á´‡ 
+ðŸ”° á´œá´˜ÊŸá´á´€á´… á´€s á´…á´á´„á´œá´á´‡É´á´›s/á´ Éªá´…á´‡á´
+ðŸ”° á´„á´œsá´›á´á´s á´›Êœá´œá´Ê™É´á´€ÉªÊŸ sá´œá´˜á´˜á´Ê€á´›
+ðŸ”° á´œsá´‡Ê€s á´„á´€É´ ÊŸá´É¢ÉªÉ´ á´›á´ Ê™á´á´› á´œsÉªÉ´É¢ á´˜á´€ssá´¡á´Ê€á´…
+ðŸ”° á´á´¡É´á´‡Ê€ á´„á´€É´ Ê™Ê€á´á´€á´…á´„á´€sá´› á´á´‡ssá´€É¢á´‡ á´›á´ á´€ÊŸÊŸ á´œsá´‡Ê€s
 		""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/BoB_Files1")],
+                [InlineKeyboardButton("ðŸ‘¨â€ðŸ’»DeveloperðŸ‘¨â€ðŸ’»", url="https://t.me/BoB_Files1")],
                 [
                     InlineKeyboardButton(
-                        "🏘Source Code🏘", url="https://github.com/yashoswalyo/MERGE-BOT"
+                        "ðŸ˜Source CodeðŸ˜", url="https://github.com/yashoswalyo/MERGE-BOT"
                     ),
                     InlineKeyboardButton(
-                        "🤔Deployed By🤔", url=f"https://t.me/{Config.OWNER_USERNAME}"
+                        "ðŸ¤”Deployed ByðŸ¤”", url=f"https://t.me/{Config.OWNER_USERNAME}"
                     ),
                 ],
-                [InlineKeyboardButton("Close 🔐", callback_data="close")],
+                [InlineKeyboardButton("Close ðŸ”", callback_data="close")],
             ]
         ),
     )
@@ -492,7 +509,7 @@ async def cancel_handler(c: Client, m: Message):
 Note:- You're Task Cancelled But Not Closed Download/Upload Status [@BoB_Files1]**""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Click To Cancel ❌", callback_data="cancel")]]
+            [[InlineKeyboardButton("Click To Cancel âŒ", callback_data="cancel")]]
         ),
      )
 
@@ -519,19 +536,19 @@ async def show_thumbnail(c: Client, m: Message):
         LOCATION = f"downloads/{str(m.from_user.id)}_thumb.jpg"
         if os.path.exists(LOCATION):
             await m.reply_photo(
-                photo=LOCATION, caption="🖼️ Your custom thumbnail", quote=True
+                photo=LOCATION, caption="ðŸ–¼ï¸ Your custom thumbnail", quote=True
             )
         elif thumb_id is not None :
             await c.download_media(message=str(thumb_id), file_name=LOCATION)
             await m.reply_photo(
-                photo=LOCATION, caption="🖼️ Your custom thumbnail", quote=True
+                photo=LOCATION, caption="ðŸ–¼ï¸ Your custom thumbnail", quote=True
             )
         else: 
-            await m.reply_text(text="❌ Custom thumbnail not found", quote=True)
+            await m.reply_text(text="âŒ Custom thumbnail not found", quote=True)
         del user
     except Exception as err:
         LOGGER.info(err)
-        await m.reply_text(text="❌ Custom thumbnail not found", quote=True)
+        await m.reply_text(text="âŒ Custom thumbnail not found", quote=True)
 
 
 @mergeApp.on_message(filters.command(["deletethumbnail"]) & filters.private)
@@ -542,11 +559,11 @@ async def delete_thumbnail(c: Client, m: Message):
         user.set()
         if os.path.exists(f"downloads/{str(m.from_user.id)}"):
             os.remove(f"downloads/{str(m.from_user.id)}")
-            await m.reply_text("✅ Deleted Sucessfully", quote=True)
+            await m.reply_text("âœ… Deleted Sucessfully", quote=True)
             del user
         else: raise Exception("Thumbnail file not found")
     except Exception as err:
-        await m.reply_text(text="❌ Custom thumbnail not found", quote=True)
+        await m.reply_text(text="âŒ Custom thumbnail not found", quote=True)
 
 @mergeApp.on_message(filters.command(["ban","unban"]) & filters.private)
 async def ban_user(c:Client,m:Message):
@@ -706,8 +723,8 @@ async def makeButtons(bot: Client, m: Message, db: dict):
                     ]
                 )
 
-    markup.append([InlineKeyboardButton("🔗 Merge Now", callback_data="merge")])
-    markup.append([InlineKeyboardButton("💥 Clear Files", callback_data="cancel")])
+    markup.append([InlineKeyboardButton("ðŸ”— Merge Now", callback_data="merge")])
+    markup.append([InlineKeyboardButton("ðŸ’¥ Clear Files", callback_data="cancel")])
     return markup
 
 LOGCHANNEL = Config.LOGCHANNEL
@@ -723,7 +740,7 @@ try:
 
 except KeyError:
     userBot = None
-    LOGGER.warning("Nᴏ ᴜsᴇʀ sᴇssɪᴏɴ, Dᴇғᴀᴜʟᴛ ʙᴏᴛ sᴇssɪᴏɴ ᴡɪʟʟ ʙᴇ ᴜsᴇᴅ")
+    LOGGER.warning("Ná´ á´œsá´‡Ê€ sá´‡ssÉªá´É´, Dá´‡Ò“á´€á´œÊŸá´› Ê™á´á´› sá´‡ssÉªá´É´ á´¡ÉªÊŸÊŸ Ê™á´‡ á´œsá´‡á´…")
 
 
 if __name__ == "__main__":
@@ -734,7 +751,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bᴏᴛ Bᴏᴏᴛᴇᴅ Wɪᴛʜ Pʀᴇᴍɪᴜᴍ Aᴄᴄᴏᴜɴᴛ,\n\n  Tʜᴀɴᴋs Fᴏʀ Usɪɴɢ <a href='https://t.me/BoB_Files1'>Cʟɪᴄᴋ Hᴇʀᴇ</a>",
+                text="Bá´á´› Bá´á´á´›á´‡á´… WÉªá´›Êœ PÊ€á´‡á´Éªá´œá´ Aá´„á´„á´á´œÉ´á´›,\n\n  TÊœá´€É´á´‹s Fá´Ê€ UsÉªÉ´É¢ <a href='https://t.me/BoB_Files1'>CÊŸÉªá´„á´‹ Há´‡Ê€á´‡</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
