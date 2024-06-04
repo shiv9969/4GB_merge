@@ -488,7 +488,7 @@ async def about_handler(c: Client, m: Message):
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/yashoswalyo")],
+                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/BoB_Files1")],
                 [
                     InlineKeyboardButton(
                         "🏘Source Code🏘", url="https://github.com/yashoswalyo/MERGE-BOT"
@@ -506,7 +506,7 @@ async def about_handler(c: Client, m: Message):
 async def cancel_handler(c: Client, m: Message):
     await m.reply_text(
         text="""**Click To Cancel Button 
-Note:- You're Task Cancelled But Not Closed Download/Upload Status [@NordBotz]**""",
+Note:- You're Task Cancelled But Not Closed Download/Upload Status [@BoB_Files1]**""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("Click To Cancel ❌", callback_data="cancel")]]
