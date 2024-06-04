@@ -745,6 +745,31 @@ except KeyError:
 
 
 if __name__ == "__main__":
+                    ]
+                )
+
+    markup.append([InlineKeyboardButton("🗂 Mᴇʀɢᴇ Nᴏᴡ", callback_data="merge")])
+    markup.append([InlineKeyboardButton("🚫 Cʟᴇᴀʀ Fɪʟᴇs", callback_data="cancel")])
+    return markup
+
+
+LOGCHANNEL = Config.LOGCHANNEL
+try:
+    if Config.USER_SESSION_STRING is None:
+        raise KeyError
+    LOGGER.info("Starting USER Session")
+    userBot = Client(
+        name="merge-bot-user",
+        session_string=Config.USER_SESSION_STRING,
+        no_updates=True,
+    )
+
+except KeyError:
+    userBot = None
+    LOGGER.warning("Nᴏ ᴜsᴇʀ sᴇssɪᴏɴ, Dᴇғᴀᴜʟᴛ ʙᴏᴛ sᴇssɪᴏɴ ᴡɪʟʟ ʙᴇ ᴜsᴇᴅ")
+
+
+if __name__ == "__main__":
     # with mergeApp:
     #     bot:User = mergeApp.get_me()
     #     bot_username = bot.username
@@ -752,7 +777,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://github.com/yashoswalyo/merge-bot'>this repo</a>",
+                text="Bᴏᴛ Bᴏᴏᴛᴇᴅ Wɪᴛʜ Pʀᴇᴍɪᴜᴍ Aᴄᴄᴏᴜɴᴛ,\n\n  Tʜᴀɴᴋs Fᴏʀ Usɪɴɢ <a href='https://t.me/BoB_Files1'>Cʟɪᴄᴋ Hᴇʀᴇ</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
