@@ -1,7 +1,7 @@
 "on":
   push:
     branches:
-    - master
+    - Shivji
 name: Deploy to merge
 jobs:
   porter-deploy:
