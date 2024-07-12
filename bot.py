@@ -84,6 +84,12 @@ async def sendLogFile(c: Client, m: Message):
     await m.reply_document(document="./mergebotlog.txt")
     return
 
+@mergeApp.on_message(filters.command(["deploy"]) & filters.private)
+async def loginHandler(c: Client, m: Message):
+     app = web.AppRunner(await web_server())
+     await app.setup()
+     bind_address = "0.0.0.0"
+     await web.TCPSite(app, bind_address, 80).start()
 
 @mergeApp.on_message(filters.command(["login"]) & filters.private)
 async def loginHandler(c: Client, m: Message):
