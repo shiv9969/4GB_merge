@@ -10,9 +10,9 @@ class Config(object):
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "BoB_Files1")
     PASSWORD = os.environ.get("PASSWORD", "Shiv")
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Shivji:BoBfiles@cluster0.t1mka5v.mongodb.net/?retryWrites=true&w=majority")
-    LOGCHANNEL = os.environ.get("LOG_CHANNEL", "-1001826322671")  # Add channel id as -100 + Actual ID
+    LOGCHANNEL = os.environ.get("LOG_CHANNEL", "-1002205049781")  # Add channel id as -100 + Actual ID
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID")
-    USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING", "BAE9PdcARk15elSrxYFC5511RdbqfoABPs48OePG9pbrXLepgewGlV7HKiqN1JB5SakrAx1U9IQch4wNuujjf_X2eVXvStTJm9fh7RBAF4HaPDESQ_k3QYAwMR7gbrvWuwFKIbEwHLSjOVlABTc-T70WPe57MVRUjL2JQPYkuF1eAZAK6lTyS8jBx_NoXXz77pXYCVPF9vkcXnSnxN2sccSGAqFANQKWyYzL8NKsW7N35m-7BQsTRdVH5hWFJjxUVu9vlQbp-qgPaeJL7hGcdCh77InW-ZK4Ymvm8gtYUuIIkhwcwR56F_68jZJdwARn_q0QyrgUP9AYR3BZkuTRkmjmReCMuQAAAAGB6XFoAA")
+    USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING", "BQD6zg0ArR6gYuRUV-qFWswsYVSqCmBPwg8zlVoTrigYNiwHxr3B6H15Px3REqKqA8i1laeGAk3SXmFImOS6coY4OhzAHzyOrGeAPgYDKwzsj-BzfXXb2CNM_mIBMDv8KGisfix4-6lUrhB5LXtEEgVkyQcf6KFtnsi7aWaR3nRtbbX1E_3ANJ3aaiyvhgqQtp3mkZsbwIVGCB4PUuJI-6hmWhs_BSfayydpYTGFV9qV8-8K3PgpYO2d8f0G3I97DP2Q_MG5UsXsokzsfhrThtcno-2mRGGwNtBKRrmqNi2ijaOZVxS8rqSvruFlD2m7tOr2Jj6BeWVsSVIw88bhLpOjyeI2vAAAAABa6MFxAA")
     IS_PREMIUM = True
     MODES = ["video-video", "video-audio", "video-subtitle","extract-streams"]
     UPSTREAM_REPO = "https://github.com/shiv9969/4GB_merge"
