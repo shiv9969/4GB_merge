@@ -6,7 +6,7 @@ class Config(object):
     TELEGRAM_API = os.environ.get("TELEGRAM_API", "9301087")
     OWNER = os.environ.get("OWNER", "1525203313")
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "ASSAULTER_SHIV")
-    SESSION_NAME = os.environ.get("SESSION_NAME", "Merge-Bot")
+    SESSION_NAME = os.environ.get("SESSION_NAME", "bot")
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "BoB_Files1")
     PASSWORD = os.environ.get("PASSWORD", "Shiv")
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Shivji:BoBfiles@cluster0.t1mka5v.mongodb.net/?retryWrites=true&w=majority")
@@ -16,7 +16,7 @@ class Config(object):
     IS_PREMIUM = True
     MODES = ["video-video", "video-audio", "video-subtitle","extract-streams"]
     UPSTREAM_REPO = "https://github.com/shiv9969/4GB_merge"
-    UPSTREAM_BRANCH = "master"
+    UPSTREAM_BRANCH = "shiv"
 
     START_TEXT = """
 Hɪ 👋 I Aᴍ A Fɪʟᴇ/Vɪᴅᴇᴏ Mᴇʀɢᴇ Bᴏᴛ. I Cᴀɴ Mᴇʀɢᴇ Tᴇʟᴇɢʀᴀᴍ Fɪʟᴇs!, Aɴᴅ Uᴘʟᴏᴀᴅ Iᴛ Tᴏ Tᴇʟᴇɢʀᴀᴍ.
